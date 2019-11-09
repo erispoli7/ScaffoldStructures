@@ -1,4 +1,4 @@
-
+This is a fork of the code described in "Open Source Software for the Automatic Design of Scaffold Structures for Tissue Engineering Applications" for use in PJAS/PRSEF 19-20
 
 
 ## What it does:
