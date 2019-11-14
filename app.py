@@ -168,6 +168,8 @@ def fun_schwarzP(type_surface, tam, spacing, hole_size):
         c4z = cos(4*z)
         f = 0.8*(s4x * sz * cyy + s4y * sx * czz + s4z * sy * cxx) \
             - 0.2 * (c4x * c4y + c4y * c4z + c4z * c4x)
+    elif type_surface == 'RispoliA':
+        f = 10.0 * (cos(x) * sin(y) * sin(z))
 
 
     #M=numpy.array(f)
@@ -225,6 +227,7 @@ class LeftPanel(wx.Panel):
                                              'Tubular_G',\
                                              'Tubular_P',\
                                              "I2-Y",\
+                                             "RispoliA",\
                                              "G'"),
                                            style=wx.CB_READONLY)
 
