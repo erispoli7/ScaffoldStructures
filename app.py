@@ -180,6 +180,9 @@ def fun_schwarzP(type_surface, tam, spacing, hole_size):
         f = .5 * (sin(4*y) + 2 * (sin(x) * sin(z)))
     elif type_surface == 'RispoliF':
         f = 5 * (sin(x/pi) + 1 * (cos(pi-y)* cos(z-y)))
+    elif type_surface == 'RispoliG':
+        f = (cos(x) * cos(y) * sin(z)) * pi + (sin(x) * sin(y) * cos(z))
+ 
     
 
     #M=numpy.array(f)
@@ -243,6 +246,7 @@ class LeftPanel(wx.Panel):
                                              "RispoliD",\
                                              "RispoliE",\
                                              "RispoliF",\
+                                             "RispoliG",\
                                              "G'"),
                                            style=wx.CB_READONLY)
 
