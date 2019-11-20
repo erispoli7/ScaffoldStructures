@@ -182,6 +182,41 @@ def fun_schwarzP(type_surface, tam, spacing, hole_size):
         f = 5 * (sin(x/pi) + 1 * (cos(pi-y)* cos(z-y)))
     elif type_surface == 'RispoliG':
         f = (cos(x) * cos(y) * sin(z)) * pi + (sin(x) * sin(y) * cos(z))
+    elif type_surface == 'RispoliH':
+        cx = cos(x)
+        cy = cos(y)
+        cz = cos(z)
+        f = cx * cy * (cz * 4) + (cx-(cy+2)) * (cx * cx) * cy *2
+    elif type_surface == 'RispoliI':
+        cx = cos(x)
+        cy = cos(y)
+        cz = cos(z)
+        sx = sin(x)
+        sy = sin(y)
+        sz = sin(z)
+        f = sx * sy * (sz*pi) + (sx + sy *sz * (cz + 10))
+    elif type_surface == 'RispoliJ':
+        f = (cos(x*pi) + sin(y*0.3)) * (cos(z*10) + 2) 
+    elif type_surface == 'RispoliK':
+        f = (sin(y*x) + cos(z*pi) - sin(y)) *3
+    elif type_surface == 'RispoliL':
+        f = cos(x)*(cos(y)*cos(z)) / sin(x*y*y)
+    elif type_surface == 'RispoliM':
+        f = (x*y) + (sin(y) - cos(z)) + (cos(z*4))*(sin(x))
+    elif type_surface == 'RispoliN':
+        f = (pi*x) * (pi*y) * (pi*z)
+    elif type_surface == 'RispoliO':
+        f = ((pi*x) * (pi*y) * (pi*z)) * (cos(z))
+    elif type_surface == 'RispoliP':
+        f = (csc(x) * sin(y) * sin(z))
+
+
+
+
+
+
+
+
  
     
 
@@ -247,6 +282,15 @@ class LeftPanel(wx.Panel):
                                              "RispoliE",\
                                              "RispoliF",\
                                              "RispoliG",\
+                                             "RispoliH",\
+                                             "RispoliI",\
+                                             "RispoliJ",\
+                                             "RispoliK",\
+                                             "RispoliL",\
+                                             "RispoliM",\
+                                             "RispoliN",\
+                                             "RispoliO",\
+                                             "RispoliP",\
                                              "G'"),
                                            style=wx.CB_READONLY)
 
