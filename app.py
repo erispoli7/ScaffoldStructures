@@ -186,7 +186,7 @@ def fun_schwarzP(type_surface, tam, spacing, hole_size):
         cx = cos(x)
         cy = cos(y)
         cz = cos(z)
-        f = cx * cy * (cz * 4) + (cx-(cy+2)) * (cx * cx) * cy *2
+        f = (cx * cy * (cz * 4) + (cx-(cy+2)) * (cx * cx) * cy *2) * 2
     elif type_surface == 'RispoliI':
         cx = cos(x)
         cy = cos(y)
@@ -204,7 +204,7 @@ def fun_schwarzP(type_surface, tam, spacing, hole_size):
     elif type_surface == 'RispoliM':
         f = (x*y) + (sin(y) - cos(z)) + (cos(z*4))*(sin(x))
     elif type_surface == 'RispoliN':
-        f = (pi*x) * (pi*y) * (pi*z)
+        f = ((pi*x)*2) * ((pi*y)*2) * ((pi*z)*2)
     elif type_surface == 'RispoliO':
         f = ((pi*x) * (pi*y) * (pi*z)) * (cos(z))
     elif type_surface == 'RispoliP':
@@ -214,7 +214,11 @@ def fun_schwarzP(type_surface, tam, spacing, hole_size):
     elif type_surface == 'RispoliR':
         f = (cos(x * (pi/4)) + sin(y - .9) * cos(z))
     elif type_surface == 'RispoliS':
-        f = (sin(x) + sin(y) + sin(z)) * (pi)
+        f = (sin(x) + sin(y) + sin(z)) * (pi/4)
+    elif type_surface == 'RispoliT':
+        f = (cos(x*x) + cos(y*y) + cos(z*z)) 
+    elif type_surface == 'Control':
+        f = (cos(x*2) + cos(y*2) + cos(z*2)) 
    
 
 
@@ -303,6 +307,8 @@ class LeftPanel(wx.Panel):
                                              "RispoliQ",\
                                              "RispoliR",\
                                              "RispoliS",\
+                                             "RispoliT",\
+                                             "Control",\
                                              "G'"),
                                            style=wx.CB_READONLY)
 
